@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Chat</title>
+    <!--app main stylesheet-->
+    <link rel="stylesheet" href="chat-style.css"/>
+    <!--Font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body class="zain-regular">
+
+<div id="center-content">
+    <div id="chat-with" class="hidden">Public chat</div>
+    <div id="messages" class="hidden"></div>
+    <div id="send-msg-panel" class="hidden">
+        <label for="input-msg"></label>
+        <textarea id="input-msg"  placeholder="Message" class="zain-regular" autofocus></textarea>
+        <input type="button" id="send-msg-btn" class="zain-regular" value="Send"/>
+    </div>
+    <div id="connecting-element" class="hidden">Connecting...</div>
+</div>
+
+<div id="login-layer">
+    <div id="login-container">
+        <div class="zain-bold" id="big-title">Sign in</div>
+        <div>Enter your username</div>
+        <label>
+            <input type="text" id="input-username" class="zain-regular" placeholder="Username"/>
+        </label>
+        <input type="button" value="Continue" id="send-username-btn" class="zain-regular">
+    </div>
+</div>
+
+<div id="left-content">
+    <div id="online-users-text"></div>
+    <div id="users" class="hidden"></div>
+    <div id="public-chat-btn-container">
+        <input type="button" value="Public chat" id="public-chat-btn" class="zain-regular hidden">
+        <div class="hidden">0</div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="messages-script.js"></script>
+</body>
+</html>
