@@ -48,7 +48,7 @@ The server starts on port `8080`. Open your browser and navigate to:
 http://localhost:8080
 ```
 
-You will be prompted to enter a username. After that you are connected to the public chat and can see other online users in the left sidebar.
+Enter a username when prompted. You'll land in the public chat and see other online users in the left sidebar.
 
 ### H2 Console
 
@@ -61,6 +61,28 @@ http://localhost:8080/h2-console
 JDBC URL: `jdbc:h2:mem:chatdb`  
 Username: `sa`  
 Password: `sa`
+
+### Database Configuration
+
+H2 runs in-memory by default. Messages are lost when the application stops.
+
+**In-memory (default)**
+
+```properties
+spring.datasource.url=jdbc:h2:mem:chatdb
+spring.jpa.hibernate.ddl-auto=create
+```
+
+**File-based (persistent across restarts)**
+
+```properties
+spring.datasource.url=jdbc:h2:file:./data/chatdb
+spring.jpa.hibernate.ddl-auto=update
+```
+
+Switch `ddl-auto` from `create` to `update` so the schema is not dropped on every start. The database file is written to `./data/chatdb.mv.db` relative to the working directory.
+
+The H2 console JDBC URL changes to match: `jdbc:h2:file:./data/chatdb`.
 
 ## Project Structure
 
@@ -133,4 +155,4 @@ When two users open a private conversation, the `chatId` is formed by sorting th
 ## Known Limitations
 
 - Duplicate usernames are not prevented. Two users logging in with the same name will cause the application to behave unexpectedly.
-- Leave notifications are received by the server but are not yet rendered in the UI.
+- The server receives leave notifications but the UI does not render them yet.
