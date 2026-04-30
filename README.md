@@ -50,18 +50,6 @@ http://localhost:8080
 
 Enter a username when prompted. You'll land in the public chat and see other online users in the left sidebar.
 
-### H2 Console
-
-The H2 database console is enabled for local inspection of persisted messages:
-
-```
-http://localhost:8080/h2-console
-```
-
-JDBC URL: `jdbc:h2:mem:chatdb`  
-Username: `sa`  
-Password: `sa`
-
 ### Database Configuration
 
 H2 runs in-memory by default. Messages are lost when the application stops.
