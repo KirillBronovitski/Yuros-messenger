@@ -61,7 +61,7 @@ spring.datasource.url=jdbc:h2:mem:chatdb
 spring.jpa.hibernate.ddl-auto=create
 ```
 
-**File-based (persistent across restarts)**
+**File-based**
 
 ```properties
 spring.datasource.url=jdbc:h2:file:./data/chatdb
