@@ -70,8 +70,6 @@ spring.jpa.hibernate.ddl-auto=update
 
 Switch `ddl-auto` from `create` to `update` so the schema is not dropped on every start. The database file is written to `./data/chatdb.mv.db` relative to the working directory.
 
-The H2 console JDBC URL changes to match: `jdbc:h2:file:./data/chatdb`.
-
 ## Project Structure
 
 ```
